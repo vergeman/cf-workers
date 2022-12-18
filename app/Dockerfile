@@ -8,5 +8,6 @@ RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -
 COPY . /app
 WORKDIR /app
 RUN npm install
+RUN npm install -g wrangler
 
 CMD [ "npm", "start" ]
