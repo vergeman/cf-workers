@@ -10,4 +10,5 @@ WORKDIR /app
 RUN npm install
 RUN npm install -g wrangler
 
-CMD [ "npm", "start" ]
+CMD ["wrangler", "dev"]
+
