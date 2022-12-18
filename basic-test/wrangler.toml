@@ -1,3 +1,12 @@
 name = "basic-test"
 main = "src/index.js"
 compatibility_date = "2022-12-18"
+vars = { ENVIRONMENT = "production" }
+
+[env.dev]
+name = "basic-test-dev"
+vars = { ENVIRONMENT = "dev" }
+
+[env.staging]
+name = "basic-test-staging"
+vars = { ENVIRONMENT = "staging" }

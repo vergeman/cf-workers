@@ -9,7 +9,7 @@
  */
 
 export default {
-	async fetch(request, env, ctx) {
-		return new Response("Hello World from basic-test!");
-	},
+    async fetch(request, env, ctx) {
+        return new Response(`Hello World from basic-test! Environment is: ${env.ENVIRONMENT}`);
+    },
 };
