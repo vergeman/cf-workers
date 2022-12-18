@@ -19,21 +19,24 @@ Each `wrangler init <project>` will create a subdirectory:
 
 ```
 /                    # container root
-/basic-test:         # individual worker - directory with own node env
+/basic-test:         # individual worker: directory with own node env
 
 ```
 
 ## Workflow
 
-* create worker: `wrangler init <name>`
+* Create worker: `wrangler init <name>`
 * Subdirectory serves as url prefix for the worker: `<prefix>-<subdomain>-workers.dev`
-* change to worker directory: (e.g. cd basic-test)
+* Change to worker directory: (e.g. cd basic-test)
   * `npm test`
   * `npm start`: runs local web server (equivalent to `wrangler dev`)
 
+Generally best to directly use `wranger` CLI.
+
 ## Deploy
 
-* Use `wrangler publish`: references login credentials (vs `npm run deploy`)
+* Use `wrangler publish`: references login credentials (vs `npm run deploy`
+  which may prompt for another login)
 
 ### Initial Setup - Subdomain per Account
 
@@ -44,24 +47,26 @@ Each `wrangler init <project>` will create a subdirectory:
 
 ---
 
-### Service vs Module Workers
+#### Service vs Module Workers
 
 * Service: `fetch` uses addEventlistener pattern
 * Module: `fetch` async function exported directly
 
 #### Environments
 
-* in `wrangler.toml` add as `[env.<name>]`
-* Module workers pass environmental variables in `env` parameter
-* Service workers environmental variables accessed as global
+* In `wrangler.toml` add as `[env.<name>]`
+  * Env works like docker-compose; inherits non-environmental specified
+    variables
+* Module workers access environmental variables via `env` parameter
+* Service workers access environmental variables as a global variable
 
 
 #### Variables and Secrets
 
 * Environmental variables are in dash or in `wranger.toml`
-* secrets: `wrangler secret put TEST_SECRET_KEY`
+* Secrets: `wrangler secret put TEST_SECRET_KEY`
   * `wrangler secret list`; keynames also visible on dash (but not values)
-  * access like an env variable: env.TEST_SECRET_KEY
+  * Access like an env variable: env.TEST_SECRET_KEY
 
 #### Logging
 
