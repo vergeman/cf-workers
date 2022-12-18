@@ -56,3 +56,15 @@ Each `wrangler init <project>` will create a subdirectory:
 * Service workers environmental variables accessed as global
 
 
+#### Variables and Secrets
+
+* Environmental variables are in dash or in `wranger.toml`
+* secrets: `wrangler secret put TEST_SECRET_KEY`
+  * `wrangler secret list`; keynames also visible on dash (but not values)
+  * access like an env variable: env.TEST_SECRET_KEY
+
+#### Logging
+
+* `console.log()`: outputs to dev server console, and `wrangler tail` for worker's project
+  * it doesn't appear in typical console - as expected, it returns the computed response.
+* `wrangler tail`: deployed console.log output
