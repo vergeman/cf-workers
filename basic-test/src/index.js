@@ -9,7 +9,10 @@
  */
 
 export default {
-	async fetch(request, env, ctx) {
-		return new Response("Hello World from basic-test!");
-	},
+    async fetch(request, env, ctx) {
+        //wranger secret put TEST_SECRET_KEY or via dash
+        console.log("TEST_SECRET_KEY", env.TEST_SECRET_KEY);
+
+        return new Response(`Hello World from basic-test! Environment is: ${env.ENVIRONMENT}`);
+    },
 };

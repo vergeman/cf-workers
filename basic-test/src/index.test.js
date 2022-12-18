@@ -1,25 +1,26 @@
 const { unstable_dev } = require("wrangler");
 
 describe("Worker", () => {
-	let worker;
+  let worker;
 
-	beforeAll(async () => {
-		worker = await unstable_dev(
-			"src/index.js",
-			{},
-			{ disableExperimentalWarning: true }
-		);
-	});
+  beforeAll(async () => {
+    worker = await unstable_dev(
+      "src/index.js",
+      {},
+      { disableExperimentalWarning: true }
+    );
+  });
 
-	afterAll(async () => {
-		await worker.stop();
-	});
+  afterAll(async () => {
+    await worker.stop();
+  });
 
-	it("should return Hello World", async () => {
-		const resp = await worker.fetch();
-		if (resp) {
-			const text = await resp.text();
-			expect(text).toMatchInlineSnapshot(`"Hello World from basic-test!"`);
-		}
-	});
+  it("should return Hello World", async () => {
+    process.env.ENVIRONMENT = 'production';
+    const resp = await worker.fetch();
+    if (resp) {
+      const text = await resp.text();
+      expect(text).toMatchInlineSnapshot(`"Hello World from basic-test! Environment is: ${process.env.ENVIRONMENT}"`);
+    }
+  });
 });
