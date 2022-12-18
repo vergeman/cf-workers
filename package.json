@@ -1,0 +1,19 @@
+{
+  "name": "cf-workers",
+  "version": "1.0.0",
+  "description": "Demo space for cloudflare workers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vergeman/cf-workers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vergeman/cf-workers/issues"
+  },
+  "homepage": "https://github.com/vergeman/cf-workers#readme"
+}
