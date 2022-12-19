@@ -43,7 +43,6 @@ Generally best to directly use `wranger` CLI.
 * Create a subdomain for account: `<subdomain>.workers.dev`
   * NB: takes a while to load a subdomain, but publish-update is quick
 * Worker access point: `<worker>-<subdomain>.workers.dev`
-  * e.g. _basic-test.alan-verga.workers.dev_
 
 ---
 
@@ -73,3 +72,33 @@ Generally best to directly use `wranger` CLI.
 * `console.log()`: outputs to dev server console, and `wrangler tail` for worker's project
   * it doesn't appear in typical console - as expected, it returns the computed response.
 * `wrangler tail`: deployed console.log output
+
+---
+
+### KV
+
+
+#### CRUD and keys
+
+* Create a namespace (`wrangler kv:namespace create "MY_KV"`), or via dashboard
+* To bind to worker, place name, id in the worker's `wrangler.toml` config.
+
+```
+kv_namespaces = [  { binding = "MY_KV", id = "sldfalksdjlkj23u20938203", preview_id = "dlkfajsdfjlskd" }]
+```
+
+* list: `wrangkler kv:namespace list`
+* put:  `wrangler kv:key put test_key 1234 --namespace-id sldfalksdjlkj23u20938203`
+* get:  ` wrangler kv:key get test_key --namespace-id sldfalksdjlkj23u20938203`
+
+#### "Environments"
+
+* Need to use analogous preview KV namespace in wrangler dev server environment by
+  appending `--preview`
+  * `wrangler kv:namespace create TEST_KV --preview `
+  * `preview_id` is another key-value pair assigned to same binding in
+    `wrangler.toml`. (see above)
+  * the `preview_id` is bucket for dev mode, and accesses a separate store from
+    the prod - `id` store.
+* Note the `preview_id` is independent / separate from the larger wrangler
+  `[env.*]` option.

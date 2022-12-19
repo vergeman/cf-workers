@@ -1,0 +1,4 @@
+name = "basic-kv"
+main =  "src/index.ts"
+compatibility_date = "2022-12-19"
+kv_namespaces = [{ binding = "TEST_KV", preview_id = "8ee8b1b251e3495e8bdaefd4c5dab363", id = "f0458c3646474fa1b34d718e9b273648" }]
