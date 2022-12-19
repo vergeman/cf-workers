@@ -2,6 +2,8 @@
 
 Demo space for cloudflare workers
 
+![Visit](https://kv-image-counter.alan-verga.workers.dev/)
+
 ## Setup
 
 * Ensure `localhost:8976` is mapped on docker container for `wrangler login`
