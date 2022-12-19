@@ -1,0 +1,4 @@
+name = "kv-image-counter"
+main = "src/index.ts"
+compatibility_date = "2022-12-19"
+kv_namespaces = [{ binding = "IMAGE_COUNTER", preview_id = "11d6bcca25de4eacac96d636cf6c9843", id = "ad4ed37c5cd94a408f0e2e588feb89f7" }]
