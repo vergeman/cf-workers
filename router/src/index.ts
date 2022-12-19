@@ -22,8 +22,14 @@ router
       "Hello, world! This is the /test page of your Worker template."
     );
   })
+  .get?.("/json", async () => {
+      const res = JSON.stringify( {response: "Hello, world! This is the /json response" } );
+    return new Response(res, {
+      headers: { "content-type": "application/json" },
+    });
+  })
   .get?.("*", async () => {
-      return new Response("not found", {status: 404});
+    return new Response("not found", { status: 404 });
   });
 
 export interface Env {
