@@ -117,3 +117,14 @@ kv_namespaces = [  { binding = "MY_KV", id = "sldfalksdjlkj23u20938203", preview
 * KV: Distributed, high read focus.
 * Durable Obj: Global Consistency / Transaction is paramount - JS Obj
 * R2: s3 clone
+
+---
+
+### Pages
+
+Easy dump to served static site:
+* Create index file in directory, e.g. `/basic-pages/index.html`
+* Publish it: `wrangler pages publish basic-pages`
+  * Takes a minute, but eventually the url will be generated
+  * Project will be created automaticaly
+
