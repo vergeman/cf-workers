@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/vergeman/cf-workers/issues"
   },
-  "homepage": "https://github.com/vergeman/cf-workers#readme"
+  "homepage": "https://github.com/vergeman/cf-workers#readme",
+  "dependencies": {
+    "create-react-app": "^5.0.1"
+  }
 }

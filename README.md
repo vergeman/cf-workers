@@ -130,3 +130,11 @@ Easy dump to served static site:
 * For dev server: `wrangler pages dev basic-pages --port 8787`
   * Note port is explicitly set to 8787 - pages dev defaults to 8788.
   * Just want to reuse our mapped docker ports (or can add 8788)
+
+
+#### create-react-app node
+
+Docker image needs to install/run as unprivileged user.
+
+`su node`
+`npx create-react-app ...`
