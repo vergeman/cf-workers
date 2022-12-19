@@ -2,7 +2,7 @@
 
 Demo space for cloudflare workers
 
-![Visit](https://kv-image-counter.alan-verga.workers.dev?event=push)
+![Visit](https://kv-image-counter.alan-verga.workers.dev)
 
 OK, so I didn't realize markdown images are cached by github, so this isn't
 accurate. But concept stands, moving on.
