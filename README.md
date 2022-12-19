@@ -2,7 +2,7 @@
 
 Demo space for cloudflare workers
 
-![Visit](https://www.palmpressinc.com/wp-content/uploads/cc_resize/3704-700x0.jpg)
+![Visit](https://kv-image-counter.alan-verga.workers.dev)
 
 ## Setup
 

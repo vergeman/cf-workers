@@ -98,7 +98,11 @@ export default {
 
       console.log(res);
 
-      const headers = { "content-type": "image/svg+xml" };
+      const headers = {
+          "content-type": "image/svg+xml",
+          "cache-control": "no cache",
+          "expires": 0,
+      };
       const svg = generateIcon(totalValue);
       return new Response(svg, {headers});
   },
