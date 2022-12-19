@@ -127,4 +127,6 @@ Easy dump to served static site:
 * Publish it: `wrangler pages publish basic-pages`
   * Takes a minute, but eventually the url will be generated
   * Project will be created automaticaly
-
+* For dev server: `wrangler pages dev basic-pages --port 8787`
+  * Note port is explicitly set to 8787 - pages dev defaults to 8788.
+  * Just want to reuse our mapped docker ports (or can add 8788)
