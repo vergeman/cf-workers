@@ -2,7 +2,11 @@
 
 Demo space for cloudflare workers
 
-![Visit](https://kv-image-counter.alan-verga.workers.dev)
+![Visit](https://kv-image-counter.alan-verga.workers.dev?event=push)
+
+OK, so I didn't realize markdown images are cached by github, so this isn't
+accurate. But concept stands, moving on.
+
 
 ## Setup
 
@@ -104,3 +108,12 @@ kv_namespaces = [  { binding = "MY_KV", id = "sldfalksdjlkj23u20938203", preview
     the prod - `id` store.
 * Note the `preview_id` is independent / separate from the larger wrangler
   `[env.*]` option.
+
+
+
+#### Storage
+
+* Cache: local store, not distributed
+* KV: Distributed, high read focus.
+* Durable Obj: Global Consistency / Transaction is paramount - JS Obj
+* R2: s3 clone
