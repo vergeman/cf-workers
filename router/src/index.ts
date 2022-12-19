@@ -22,12 +22,23 @@ router
       "Hello, world! This is the /test page of your Worker template."
     );
   })
+  /* JSON */
   .get?.("/json", async () => {
-      const res = JSON.stringify( {response: "Hello, world! This is the /json response" } );
+    const res = JSON.stringify({
+      response: "Hello, world! This is the /json response",
+    });
     return new Response(res, {
       headers: { "content-type": "application/json" },
     });
   })
+  /* FETCH */
+  .get?.("/test.json", async () => {
+    const url = "https://jsonplaceholder.typicode.com/todos/1";
+    const headers = { "content-type": "application/json" };
+    const res = await fetch(url, { headers }).then((res) => res.json());
+    return new Response(JSON.stringify(res), { headers });
+  })
+  /* 404 */
   .get?.("*", async () => {
     return new Response("not found", { status: 404 });
   });
