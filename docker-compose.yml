@@ -5,6 +5,7 @@ services:
     ports:
       - "8976:8976"
       - "8787:8787"
+      - "3000:3000" # react dev server
     volumes:
       - type: bind
         source: ./
