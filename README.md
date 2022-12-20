@@ -95,7 +95,7 @@ kv_namespaces = [  { binding = "MY_KV", id = "sldfalksdjlkj23u20938203", preview
 
 * list: `wrangkler kv:namespace list`
 * put:  `wrangler kv:key put test_key 1234 --namespace-id sldfalksdjlkj23u20938203`
-* get:  ` wrangler kv:key get test_key --namespace-id sldfalksdjlkj23u20938203`
+* get:  `wrangler kv:key get test_key --namespace-id sldfalksdjlkj23u20938203`
 
 #### "Environments"
 
@@ -138,8 +138,10 @@ Easy dump to served static site:
 
 Docker image needs to install/run `npx create-react-app` as unprivileged user.
 
-`su node`
-`npx create-react-app <name>`
+```
+su node
+npx create-react-app <name>
+```
 
 * Run dev server: `npm start`
 * Build: `npm build`
@@ -172,3 +174,6 @@ The CLI is in beta, so some behavior issues on `wrangler pages publish <director
     setting)
 * Dashboard configuration is full-featured; has "Builds & Deployments" config:
   * Allows change of production branch, directories, hooks.
+  * can exclude branches from preview deployments on dashboard
+  * Nice strictly for web deploy - place CI or pre-deploy test elsewhere (e.g GH
+    actions)
