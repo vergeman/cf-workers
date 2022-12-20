@@ -134,7 +134,30 @@ Easy dump to served static site:
 
 #### create-react-app node
 
-Docker image needs to install/run as unprivileged user.
+Docker image needs to install/run `npx create-react-app` as unprivileged user.
 
 `su node`
-`npx create-react-app ...`
+`npx create-react-app <name>`
+
+* Run dev server: `npm start`
+* Build: `npm build`
+* Create CF pages: `wrangler pages project create <name/dir>`
+* Publish static build: `wrangler pages publish react-pages/build`
+
+#### Wrangler Pages CLI
+
+The CLI is in beta, so some behavior issues on `wrangler pages publish <directory>`:
+
+* To assign a project: `--project-name`
+* To assign production / preview: `--branch <branch set on create>`
+  * For `production` choose the production branch input when running `wrangler pages project create`.
+  * Otherwise the current branch deployed will default to a `preview` branch.
+
+##### Important: Make sure to note the production branch when on project create
+
+* There doesn't seem to be a way to list this, except to manually upload a
+  directory and see what the dashboard says
+
+* Safest to just assume defaults: branch `main` as deploy branch.
+
+
