@@ -130,7 +130,9 @@ Easy dump to served static site:
 * For dev server: `wrangler pages dev basic-pages --port 8787`
   * Note port is explicitly set to 8787 - pages dev defaults to 8788.
   * Just want to reuse our mapped docker ports (or can add 8788)
-
+* Two deploy options:
+    * CLI via `wrangler pages publish` which uploads directory
+    * Github integration via Cloudflare Integration on Github
 
 #### create-react-app node
 
@@ -161,3 +163,12 @@ The CLI is in beta, so some behavior issues on `wrangler pages publish <director
 * Safest to just assume defaults: branch `main` as deploy branch.
 
 
+#### Github Integration Cloudflare App
+
+* Install and authorize on a per repo basis
+* Easier than github actions - no token/secret to manage, or .github workflows.
+* For react app, make sure directory structure matches
+  * `build` directory is relative to specificed root directory (advanced
+    setting)
+* Dashboard configuration is full-featured; has "Builds & Deployments" config:
+  * Allows change of production branch, directories, hooks.
